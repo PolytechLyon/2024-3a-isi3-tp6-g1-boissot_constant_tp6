@@ -6,7 +6,7 @@ Noms des étudiants du binôme : Aurélien Boissot et Céline Constant
 
 Quel patron de conception reflète ce modèle ? Identifiez le rôle de chaque de ces deux classes dans ce patron.
 
-Le diagramme de classe présenté dans le sujet représente le pattern visiteur composite. Comme précisé dans le sujet, un véhicule est un objet mobile spécifique, tout comme ses différents composants.  Ainsi, la classe "Vehicle" représente le composite et l'interface "MobileObject" représente le Composant. 
+Le diagramme de classe présenté dans le sujet représente le pattern visiteur composite. Comme précisé dans le sujet, un véhicule est un objet mobile spécifique, tout comme ses différents composants.  Ainsi, la classe "Vehicle" représente le composite et l'interface "MobileObject" représente le Composant. De plus, la classe Wheel représente les feuilles. 
 
 Doit-on récrire la méthode `getVelocity()` ou la méthode `getMass()` pour la nouvelle classe ?
 
@@ -14,7 +14,9 @@ Il n'est pas nécessaire de réimplémenter les méthodes `getVelocity()` et `ge
 
 ## Exercices 2
 
+Quel patron de conception utilise la méthode getVelocity() pour parcourir les composants d'un véhicule ? Quel avantage apporte ce patron ?
 
+La méthode `getVelocity()` utilise le patron de conception itérateur afin de parcourir les composants d'un véhicule et de calculer la vélocité totale. Ce patron de conception nous permet de parcourir les différents composants de notre véhicule, peu importe leur type : Bike, SimpleBike...
 
 ## Exercices 3
 
