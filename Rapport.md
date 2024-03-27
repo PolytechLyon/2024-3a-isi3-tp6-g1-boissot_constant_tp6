@@ -16,7 +16,13 @@ Il n'est pas nécessaire de réimplémenter les méthodes `getVelocity()` et `ge
 
 Quel patron de conception utilise la méthode getVelocity() pour parcourir les composants d'un véhicule ? Quel avantage apporte ce patron ?
 
-La méthode `getVelocity()` utilise le patron de conception itérateur afin de parcourir les composants d'un véhicule et de calculer la vélocité totale. Ce patron de conception nous permet de parcourir les différents composants de notre véhicule, peu importe leur type : Bike, SimpleBike...
+La méthode `getVelocity()` utilise le patron de conception itérateur afin de parcourir les composants d'un véhicule et de calculer la vélocité totale. Ce patron de conception nous permet de parcourir les différents composants de notre véhicule, sans se soucier du type de notre structure de données (Set, List...).
+
+Modifier la structure de donnée utilisée pour stocker les composants d'un véhicule de Set à List. Doit-on modifier la réalisation de la méthode getVelocity() ?
+
+Il n'est pas nécessaire de modifier l'implémentation de la méthode `getVelocity()` car comme indiqué précédemment, le patron de conception itérateur nous permet de parcourir les différents composants de notre véhicule sans se soucier du type de la structure de données contenant les différents composants. 
+
+
 
 ## Exercices 3
 
