@@ -50,6 +50,14 @@ Puis, après avoir apporté les modifications citées ci-dessus, nous obtenons l
 
 ## Exercices 5
 
+Nous avons donc implémenté le pattern Patron de méthode pour les classes associées au `NamedLogger`.
+
+La classe `NamedLogger` réprésente la classe abstraite du design pattern, et `FileLogger` et `ConsoleLogger` sont les deux classes concrètes.
+
+Dans la classe `NamedLogger` nous avons défini une méthode abstraite `output()` qui sera responsable de l'affichage du message. Cette méthode est implémentée dans les classes `FileLogger` et `ConsoleLogger` afin de respectivement afficher le message dans un fichier et dans la console.
+
+La méthode `log()` de la classe `NamedLogger` fait donc appel à la méthode `output()` des classes concrètes.
+
 ## Exercices 6
 
 ## Exercices 7

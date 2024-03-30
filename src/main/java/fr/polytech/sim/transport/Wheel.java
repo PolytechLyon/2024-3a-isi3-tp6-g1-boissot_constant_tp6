@@ -1,7 +1,6 @@
 package fr.polytech.sim.transport;
 
 import fr.polytech.sim.Clock;
-import fr.polytech.sim.cycling.Bike;
 import fr.polytech.sim.log.ConsoleLogger;
 import fr.polytech.sim.log.Logger;
 import java.util.Objects;
