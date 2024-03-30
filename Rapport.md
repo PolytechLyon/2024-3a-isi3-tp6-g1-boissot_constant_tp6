@@ -24,7 +24,29 @@ Il n'est pas nécessaire de modifier l'implémentation de la méthode `getVeloci
 
 ## Exercices 3
 
+Pour implémenter le pattern Singleton, on ajoute une donnée membre statique et privée de type Clock. Le constructeur est privé afin que les autres classes ne puissent pas instancer la classe Clock. On ajoute ensuite une méthode publique et statique getClock() qui crée une instance de Clock lors du premier appel, et la stocke dans la donnée membre. Lors des appels suivants, on renvoie alors l'instance de Clock stockée dans la donnée membre.
+
 ## Exercices 4
+
+Les classes `Bike` et `Wheel` n'appartiennent pas au même paquetage. `Bike` appartient au paquetage `cycling`, `Wheel` appartient au paquetage `transport`.
+
+Il existe une dépendance cyclique entre ces deux classes. En effet, `Wheel` dispose d'une donnée membre de type `Bike`. Inversement, la classe `Vehicle` a une collection de type `MobileObject`. Or, la classe `Bike` hérite de la classe `Vehicle` et la classe `Wheel` hérite de la classe `MobileObject`. Ainsi, on a également une dépendance entre entre la classe `Bike` et `Wheel`.
+
+Ainsi, les modifications d'un package est suscpetible d'impacter l'autre package. Les deux packages sont donc étroitement liés.
+
+La classe `Wheel` dispose d'une donnée membre de type `Bike`, et utilise la méthode `getpush()` de la classe `Bike`.
+
+La classe abstraite `Vehicle`, faisant partie du paquetage `transport`, déclare la méthode abstraite `getpush()` implémentée dans la classe `Bike`.
+
+Ainsi, il suffit donc de déclarer une donnée membre de type `Vehicle` plutôt que `Bike`, et de modifier le type de paramètre de la méthode `getPush()`, afin de profiter de l'abstraction déjà mise en place, grâce au polymorphisme.
+
+Avant modifications, nous avions le diagramme de classe suivant : 
+
+![Diagramme de classe avant modifications](/images/ClassDiagram_EXO4_before.png)
+
+Puis, après avoir apporté les modifications citées ci-dessus, nous obtenons le diagramme de classe suivant : 
+
+![Diagramme de classe après modifications](/images/ClassDiagram_EXO4_after.png)
 
 ## Exercices 5
 

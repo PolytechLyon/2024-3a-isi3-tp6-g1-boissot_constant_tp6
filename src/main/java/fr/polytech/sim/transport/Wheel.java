@@ -13,15 +13,15 @@ public class Wheel implements MobileObject {
     private static final double DEFAULT_MASSE = 10;
 
     private final Logger logger = new ConsoleLogger("Wheel");
-    private final Clock clock = new Clock();
-    private final Bike drive;
+    private final Clock clock = Clock.getClock();
+    private final Vehicle drive;
 
     /**
      * Constructor.
      *
      * @param drive  the object providing push power.
      */
-    public Wheel(Bike drive) {
+    public Wheel(Vehicle drive) {
         Objects.requireNonNull(drive, "Bike must not be null.");
         this.drive = drive;
     }
