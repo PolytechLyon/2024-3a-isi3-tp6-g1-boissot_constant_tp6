@@ -60,8 +60,29 @@ La méthode `log()` de la classe `NamedLogger` fait donc appel à la méthode `o
 
 ## Exercices 6
 
+Nous avons implémenté le patron de conception "méthode de fabrique" en créant une nouvelle classe `LoggerFactory` dont le rôle est de renvoyer une instance de la classe `ConsoleLogger`. Ainsi, lorsque l'on veut créer une instance d'une réalisation de l'interface `Logger`, on appelle alors la méthode `CreateLogger()` de `LoggerFactory`. Dans toutes les classes on utilise donc uniquement la classe `ConsoleLogger` pour écrire un message dans les journaux.
+
+![Diagramme de classe de l'exercice 6](/images/ClassDiagram_EXO6.png)
+
+
+Ici, nous pouvons instancier plusieurs fois la classe `LoggerFactory`. En effet, à chaque appel de la méthode `CreateLogger()`, on crée une nouvelle instance. Contrairement au patron singleton où l'on utilise une instance unique.
+
 ## Exercices 7
+
+Nous avons créé une classe `LoggerDecorator` implémentant l'interface `Logger`. Implémenter l'interface permet de décorer toutes les classe héritant elles-mêmes de l'interface (ici, `ConsoleLogger` et `FileLogger`). Cette classe permet d'apporter de la modularité supplémentaire au code puisque cela permet de facilement implémenter de nouveaux décorateurs par la suite.
+
+La classe `TimestampedLoggerDecorator`, héritant de la classe `LoggerDecorator` permet ainsi d'ajouter la date et l'heure au début d'un message.
+
+![Diagramme de classe de l'exercice 7](/images/ClassDiagram_EXO7.png)
 
 ## Exercices 8
 
+La classe `Context` suit le patron de conception "Facade" vis-à-vis de l'outil `ServiceLoader`. En effet, celle-ci propose une interface offrant un accès simplifié aux fonctionnalités proposées par la classe `ServiceLoader`.
 
+Il est possible d'avoir plusieurs lignes dans le fichier `fr.polytech.sim.cycling.Bike`. Chaque ligne correspond à une sous-classe que nous devons injecter lorsque l'on veut instancier un objet de type `Bike` par injection de dépendance.
+
+## Exercice 9
+
+Le type de renvoie de la méthode `injectAll()` est `Iterator<T>`, c'est-à-dire un itérateur sur le type `T` passé en paramètre.
+
+Cette méthode propose le patron de conception "Itérateur" pour parcourir tous les objets d'un certain type.
